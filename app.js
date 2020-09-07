@@ -38,8 +38,8 @@ addButton.addEventListener('click', (e)=> {
 
 list.addEventListener('click', (e)=>{
     const element = e.target;
-    if(element.classList[0] === 'btn') {
-        const elementNode = (element.parentElement).parentElement;
+    if(element.classList[0] === 'button') {
+        const elementNode = element.parentElement;
         const elementDataName = element.dataset.name;
         let elementDataPrice = parseFloat(element.dataset.price);
         let elementDataQuantity = parseInt(element.dataset.quantity);
@@ -76,14 +76,19 @@ const renderList = () => {
     fruitList.sort();
     fruitList.forEach((fruit) => {        
 
-        itemHtml = `<p>${fruit}<span><button type="button" class="btn remove-btn" data-name="${fruit}" data-price="${state[`${fruit}`].price}" data-quantity="${state[`${fruit}`].quantity}">Remove</button></span></p>`;
+        itemHtml = `
+            <div class="mt-sm-3 bg-light alert flexview">
+                <p class="large">${fruit}</p>
+                <button type="button" class="button col-sm-2 remove-btn" data-name="${fruit}" data-price="${state[`${fruit}`].price}" data-quantity="${state[`${fruit}`].quantity}">Remove</button>
+            </div>`;    
         list.insertAdjacentHTML('beforeend', itemHtml);
     })
 }
 
 const renderTotal = () => {
     totalDiv.innerHTML = '';
-    const html = `Total : <span>${total}</span>`;
+    //const html = `Total : <span>${total}</span>`;
+    const html = `<p class="display-4">Total: <span>${total}</span></p>`;
     totalDiv.insertAdjacentHTML('afterbegin', html);
 }
 
