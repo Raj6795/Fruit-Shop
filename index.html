@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fruit Shop</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+
+        <h1>Fruit Shop</h1>
+        <!-- 
+        <ol>
+        <li>Create a Form with following fields</li>
+        <li>Follow the alignments - Labels in left, Fields in right, Buttons in center</li>
+        <li>Add Background color to form</li>
+        <li>Add Three fruits with price and quantity</li>
+        <li>Store the ordered fruits</li>
+        <li>Display the "Fruit Basket" in a table</li>
+        <li>Add a "Remove" button in Fruit basket at end of each item</li>
+        <li>Display fruits on the basket in Alphabetical order</li>
+        <li>Calculate the total price for items in the Fruit basket</li>
+        </ol>
+        <h1>Order Fruits</h1>
+        Fruit Name&nbsp;: <input type="text" placeholder="Fruit name">
+        <br><br>
+        Price&nbsp;: <input type="text" placeholder="15.50">
+        <br><br>
+        Quantity : &nbsp;<select>
+        <option>1</option>
+        <option>5</option>
+        <option>10</option>
+        </select>
+        <br><br>
+        <button type="submit" >Add</button><br><br>
+        <button >View Fruit Basket</button>&nbsp;&nbsp;
+        <button >View Total Price</button>
+        -->
+        <div class="gridview">
+            <div class="form">
+                <form>
+                    <label for="fruit-name">Fruit Name : </label>
+                    <input type="text" id="fruit-name" name="fruit-name" placeholder="Fruit name" required><br>
+    
+                    <label for="fruit-price">Fruit Price : </label>
+                    <input type="number" id="fruit-price" name="fruit-price" placeholder="15.50" required><br>
+    
+                    <label for="fruit-quantity">Quantity : </label>
+                    <select name="fruit-quantity" id="fruit-quantity" required>
+                        <option value="1">1</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                    </select> <br>
+                    <button type="submit" id="add-btn" class="btn">Add</button> <br>
+                    <button type="button" id="fruit-basket" class="btn">View Fruit Basket</button>
+                    <button type="button" id="total-price" class="btn">View Total Price</button>
+                </form>
+            </div>
+    
+            <div class="list hidden" id="list">
+                <!-- <p>Dummy data <span><button type="button" class="btn remove-btn">Remove</button></span></p> -->
+            </div>
+        </div>
+
+        <div class="total hidden" id="total-div"></div>
+        
+        <script src="app.js"></script>
+    </body>
+</html>
